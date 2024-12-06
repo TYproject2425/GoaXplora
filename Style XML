@@ -1,0 +1,8 @@
+//for category logo
+
+<resources>
+    <style name="roundedImageView" parent="Widget.MaterialComponents.ShapeableImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>
