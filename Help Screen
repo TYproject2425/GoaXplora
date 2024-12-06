@@ -1,0 +1,199 @@
+//java file
+
+//HelpActivity
+
+package com.example.goaxplora;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class HelpActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_help); // Replace with your XML file name
+
+        // Find the back arrow ImageView by its ID
+        ImageView backArrow = findViewById(R.id.back_arrow);
+
+        // Set OnClickListener to handle click events
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate back to HomeActivity
+                Intent intent = new Intent(HelpActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish(); // Optional: Close the current activity to prevent returning to it
+            }
+        });
+    }
+}
+
+
+
+// XML layout
+
+//activity_help
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".HelpActivity"
+    tools:ignore="Hardcore text">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Back Arrow and Title -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/back_arrow_black"
+                    android:contentDescription="Back" />
+
+                <TextView
+                    android:layout_width="174dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/Overview"
+                    android:textColor="#11627D"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Description -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#2B3B47"
+                android:layout_marginBottom="24dp"
+                android:gravity="start" /> <!-- Aligned to start -->
+
+            <!-- Help Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Help"
+                android:textColor="#11627D"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="start" /> <!-- Aligned to start -->
+
+            <!-- Help Section as CardView -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"
+                android:backgroundTint="#0087B5"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" How To Explore Goa "
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:layout_marginBottom="8dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp" />
+
+                    <!-- Help Instructions -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="6dp"
+                        android:text=" 1. Browse Categories: Find beaches, restaurants, shopping, activities, and more.\n\n 2. Plan Easily: Get details, maps, and tips for every destination.\n\n 3. Save Favorites: Create a list of must-visit places.\n\n 4. Navigate: Use the map for directions and explore effortlessly."
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp" />
+
+                    <!-- FAQs and Travel Tips -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" FAQs (Frequently Asked Questions) >"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" Travel Safety Tips\n - Precautions when renting scooters.\n - Staying safe at beaches (e.g., rip current warnings).\n - Avoiding tourist scams."
+                        android:textSize="16sp"
+                        android:lineSpacingExtra="6dp"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp" />
+
+                    <!-- Contact Section -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text=" Contact Us: support@goaexplora.com"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="unlabeled" />
+</RelativeLayout>
