@@ -1,0 +1,202 @@
+// XML layout
+//FeedbackActivity
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:ignore="HardcodedText">
+
+    <!-- Back Arrow and Title Header -->
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back_arrow_black"
+            android:contentDescription="Back Arrow"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/feedback_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FEEDBACK"
+            android:textColor="#11627D"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Blue Card (Outer Card) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/blue_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#0087B5"
+        android:padding="16dp"
+        android:layout_below="@id/header_layout">
+
+        <RelativeLayout
+            android:layout_width="362dp"
+            android:layout_height="186dp"
+            android:paddingTop="10dp">
+            <!-- Suggestion Text -->
+            <TextView
+                android:id="@+id/card_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suggestions"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="14dp"
+               />
+
+            <!-- Edit Icon -->
+            <ImageView
+                android:id="@+id/edit_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:contentDescription="Edit Icon"
+                android:src="@drawable/baseline_create_24" />
+
+            <!-- Feedback Card (White Card) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/feedback_card"
+                android:layout_width="300dp"
+                android:layout_height="117dp"
+                android:layout_below="@id/card_title"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <TextView
+                    android:id="@+id/feedback_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Consider adding voice command functionality to make navigation easier and more accessible, especially for users who prefer hands-free interaction or have difficulty using traditional touch controls."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:backgroundTint="#FF7961"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        android:stateListAnimator="@null" />
+
+    <!-- Bottom Navigation Icons -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="unlabeled" />
+
+</RelativeLayout>
+
+
+// Java file
+
+package com.example.goaxplora;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main); // Make sure your layout file is correctly named
+
+        // Find the back arrow ImageView by its ID
+        ImageView backArrow = findViewById(R.id.back_arrow);
+
+        // Set OnClickListener for the back arrow
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate back to HomeActivity
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish(); // Close MainActivity to prevent returning to it
+            }
+        });
+
+        // Find the Submit Button by its ID
+        Button submitButton = findViewById(R.id.submit_button);
+
+        // Set OnClickListener for the Submit Button
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Display a Toast message to confirm feedback submission
+                Toast.makeText(MainActivity.this, "Feedback Submitted!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Find bottom navigation icons (optional logic if needed)
+        ImageView homeIcon = findViewById(R.id.home_icon);
+        ImageView questionIcon = findViewById(R.id.question_icon);
+
+        // Set OnClickListener for Home Icon
+        homeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to HomeActivity
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // Set OnClickListener for Question Icon
+        questionIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to FAQActivity (or any other activity)
+                Intent intent = new Intent(MainActivity.this, FAQActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+}
