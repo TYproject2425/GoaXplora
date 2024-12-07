@@ -1,0 +1,171 @@
+//xml
+//activity_wishlist.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F7FA"
+    tools:ignore="HardcodedText"
+    tools:context=".WishlistActivity">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:contentDescription="Back"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/wishlistTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WISHLIST"
+        android:textColor="#11627D"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/blueCardLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#0288D1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wishlistTitle"
+        app:layout_constraintHeight_percent="0.8"
+        android:layout_margin="18dp">
+
+
+        <Button
+            android:id="@+id/browsePlacesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_margin="16dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Browse Places"
+            android:textColor="#000"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Wishlist Item -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/wishlistItemCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="13dp"
+        app:cardElevation="4dp"
+        android:padding="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wishlistTitle"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!-- Place Image -->
+            <ImageView
+                android:id="@+id/placeImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Place Image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baga_beach" />
+
+            <!-- Place Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/placeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Baga Beach, Goa"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/placeCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category: Landscape"
+                    android:textColor="#757575"
+                    android:textSize="14sp" />
+
+                <!-- Actions -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/viewDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Details"
+                        android:textColor="#0288D1"
+                        android:textSize="14sp"
+                        android:drawableStart="@drawable/baseline_manage_search_24"
+                        android:drawablePadding="4dp" />
+
+                    <TextView
+                        android:id="@+id/planVisit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plan a Visit"
+                        android:textColor="#0288D1"
+                        android:textSize="14sp"
+                        android:layout_marginStart="16dp"
+                        android:drawableStart="@drawable/baseline_calendar_month_24"
+                        android:drawablePadding="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Browse Places Button -->
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
