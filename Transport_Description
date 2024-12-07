@@ -1,0 +1,185 @@
+// XML layout
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_food">
+
+    <!-- Top Banner -->
+    <LinearLayout
+        android:id="@+id/top_banner"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:orientation="vertical"
+        android:background="#004D40"
+        android:padding="16dp">
+
+        <!-- Back Icon -->
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:src="@drawable/back_arrow_black"
+            android:contentDescription="Back Icon" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/banner_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Discover Goa at Your Pace"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/banner_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Connecting you to your destination."
+        android:textColor="#B2DFDB"
+        android:textSize="14sp"
+        android:gravity="center" />
+
+        <!-- Ferry Icon -->
+        <ImageView
+            android:id="@+id/ferry_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_ferry"
+            android:contentDescription="Ferry Icon" />
+    </LinearLayout>
+
+    <!-- Content Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/content_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="200dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="6dp"
+        android:layout_below="@+id/top_banner"
+        android:backgroundTint="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="371dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Overview Title -->
+            <TextView
+                android:id="@+id/overview_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overview:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Overview Content -->
+            <TextView
+                android:id="@+id/overview_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ferries are a scenic and traditional way to cross Goa's rivers."
+                android:textColor="#555555"
+                android:textSize="14sp" />
+
+            <!-- Famous Ferry Routes Title -->
+            <TextView
+                android:id="@+id/routes_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Famous Ferry Routes:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Famous Ferry Routes Content -->
+            <TextView
+                android:id="@+id/routes_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Panjim to Chorao Island: Perfect for bird-watching enthusiasts.\n\nOld Goa to Divar Island: Connects heritage and rural beauty."
+                android:textColor="#555555"
+                android:textSize="14sp" />
+
+            <!-- Tips Title -->
+            <TextView
+                android:id="@+id/tips_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Tips:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Tips Content -->
+            <TextView
+                android:id="@+id/tips_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Operating hours: 6:00 AM to 10:00 PM."
+                android:textColor="#555555"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:itemIconTint="@color/black"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="unlabeled" />
+
+</RelativeLayout>
+
+
+//java file
+
+package com.example.ferryinfo;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class FerryActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ferry);
+
+        // Back Arrow Functionality
+        ImageView backArrow = findViewById(R.id.back_arrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Close the activity or navigate back
+                finish();
+            }
+        });
+    }
+}
