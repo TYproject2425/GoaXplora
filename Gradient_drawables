@@ -1,0 +1,55 @@
+//gradient_landscape
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#FFD4A3"
+        android:endColor="#88C799"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+--------------------------------------------------------------------------------------------
+
+//gradient_food
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#FFF5E1"
+        android:endColor="#FFB775"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+---------------------------------------------------------------------------------------------
+
+//gradient_event
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#FF5DA2"
+        android:endColor="#FFAA5B"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+-----------------------------------------------------------------------------------------------
+
+//gradient_shopping
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#FF5DA2"
+        android:endColor="#FFAA5B"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+---------------------------------------------------------------------------------------------------
+
+//gradient_hotel
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#3498DB"
+        android:endColor="#1ABC9C"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
