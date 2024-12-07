@@ -1,3 +1,17 @@
+//gradient_background    (used in login,signup ,home,profile,help,faq,wishlist,feedback pages)
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#ADD8E6"
+        android:endColor="#FFFACD"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+
+--------------------------------------------------------------------------------------------
+
+
 //gradient_landscape
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
@@ -7,6 +21,8 @@
         android:angle="270"
         android:type="linear"/>
 </shape>
+
+
 --------------------------------------------------------------------------------------------
 
 //gradient_food
@@ -46,10 +62,38 @@
 ---------------------------------------------------------------------------------------------------
 
 //gradient_hotel
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:startColor="#3498DB"
         android:endColor="#1ABC9C"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+
+------------------------------------------------------------------------------------------------------
+
+
+//gradient_activity
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#3A2A6D"
+        android:endColor="#4C79D1"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+
+--------------------------------------------------------------------------------------------------------
+
+//gradient_transport
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#008080"
+        android:endColor="#F5F5F5"
         android:angle="270"
         android:type="linear"/>
 </shape>
