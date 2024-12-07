@@ -1,11 +1,11 @@
 //xml profile
 
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5F4FB"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/login_gradient">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,15 +25,15 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/ic_user_placeholder"
+                android:src="@drawable/ellipse_profile"
                 android:layout_gravity="center"
                 android:background="@drawable/circle_background"
-                android:contentDescription="User Icon" />
+                android:contentDescription="@string/user_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User 😊"
+                android:text="@string/user"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:layout_marginTop="8dp"
@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User123@gmail.com"
+                android:text="@string/user123_gmail_com"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:gravity="center" />
@@ -52,53 +52,76 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GENERAL"
-            android:textColor="#4A4A4A"
+            android:text="@string/general"
+            android:textColor="#000"
+            android:textStyle="bold"
             android:textSize="16sp"
+            android:layout_margin="6dp"
             android:layout_marginBottom="8dp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#FFFFFF"
             android:elevation="4dp"
-            android:padding="8dp"
+            android:padding="12dp"
+            android:layout_gravity="center"
             android:layout_marginBottom="16dp">
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_background"
-                android:text="Profile Settings"
-                android:layout_marginBottom="8dp" />
+                app:cornerRadius="8dp"
+                android:alpha="0.50"
+                android:backgroundTint="@color/gray"
+                android:drawableEnd="@drawable/baseline_navigate_next_24"
+                android:textColor="@color/black"
+                android:text="@string/profile_settings"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="textStart"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_background"
-                android:text="Notification Settings"
-                android:layout_marginBottom="8dp" />
+                app:cornerRadius="8dp"
+                android:alpha="0.50"
+                android:backgroundTint="@color/gray"
+                android:drawableEnd="@drawable/baseline_navigate_next_24"
+                android:textColor="@color/black"
+                android:text="@string/notification_settings"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="textStart" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_background"
-                android:text="Wishlist"
-                android:layout_marginBottom="8dp" />
+                app:cornerRadius="8dp"
+                android:alpha="0.50"
+                android:backgroundTint="@color/gray"
+                android:drawableEnd="@drawable/baseline_navigate_next_24"
+                android:textColor="@color/black"
+                android:text="@string/wishlist"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="textStart"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_background"
-                android:text="Trip Checklist" />
+                app:cornerRadius="8dp"
+                android:alpha="0.50"
+                android:backgroundTint="@color/gray"
+                android:drawableEnd="@drawable/baseline_navigate_next_24"
+                android:textColor="@color/black"
+                android:text="@string/trip_checklist"
+                android:textAlignment="textStart"/>
         </LinearLayout>
 
         <!-- Footer Section -->
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_height="212dp"
+            android:layout_marginTop="10dp"
             android:background="#FFE8D3"
             android:orientation="vertical"
             android:padding="16dp">
@@ -107,35 +130,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="FAQs"
+                android:text="@string/faqs"
                 android:textColor="#4A4A4A" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="ABOUT US"
+                android:text="@string/about_us"
                 android:textColor="#4A4A4A" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="FEEDBACK"
+                android:text="@string/feedback"
                 android:textColor="#4A4A4A" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="16dp"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="RATE US"
+                    android:text="@string/rate_us"
                     android:textColor="#4A4A4A" />
 
                 <!-- Rating stars -->
@@ -152,11 +175,22 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/logout_button_background"
-                android:text="LOG OUT" />
+                android:text="@string/log_out" />
         </LinearLayout>
     </LinearLayout>
-</ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_nav_menu" />
+</LinearLayout>
+
 
 
 
