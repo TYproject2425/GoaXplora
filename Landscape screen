@@ -201,3 +201,17 @@ public class LandscapeActivity extends AppCompatActivity {
         );
     }
 }
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------]
+
+//rounded_category_card
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#989898" /> <!-- Background color -->
+    <corners android:radius="16dp" /> <!-- Rounded corners -->
+</shape>
