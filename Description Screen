@@ -1,11 +1,13 @@
 //XML layout
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F4F4F4"
+    tools:ignore="Hardcodedtext">
 
     <!-- Scrollable Content -->
     <ScrollView
@@ -20,20 +22,38 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <!-- Top Image -->
-            <ImageView
-                android:id="@+id/topImage"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/sample_image"
-                android:contentDescription="Temple Image" />
+                android:layout_height="250dp">
+
+                <ImageView
+                    android:id="@+id/topImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baga_beach"
+                    android:contentDescription="Temple Image" />
+
+                <!-- Back Arrow -->
+                <ImageView
+                    android:id="@+id/backArrow"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_margin="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:padding="8dp"
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:contentDescription="Back" />
+            </RelativeLayout>
 
             <!-- Card Container for Content -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="24dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
@@ -41,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:background="#F5E4D7"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="28dp">
 
                     <!-- Title -->
                     <TextView
@@ -50,19 +70,22 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="8dp"
                         android:text="Shri Mangeshi Temple"
+                        android:fontFamily="@font/merienda_variablefont_wght"
                         android:textColor="#000000"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <!-- Overview Section -->
+
                     <TextView
                         android:id="@+id/overviewTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="4dp"
                         android:text="Overview"
+                        android:fontFamily="@font/poppins_semibold"
                         android:textColor="#333333"
-                        android:textSize="16sp"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -71,7 +94,8 @@
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="4dp"
                         android:paddingBottom="16dp"
-                        android:text="Shri Mangeshi Temple, located in Ponda, is a revered Hindu temple dedicated to Lord Shiva. Famous for its stunning white architecture, intricate carvings, and serene water tank..."
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Shri Mangeshi Temple, located in Ponda, is a revered Hindu temple dedicated to Lord Shiva. Famous for its stunning white architecture, intricate carvings, and serene water tank."
                         android:textColor="#555555"
                         android:textSize="14sp" />
 
@@ -82,6 +106,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="8dp"
                         android:text="Key Information"
+                        android:fontFamily="@font/poppins_semibold"
                         android:textColor="#333333"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -91,6 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Location: Ponda, North Goa"
+                        android:fontFamily="@font/poppins_regular"
                         android:textColor="#555555"
                         android:textSize="14sp" />
 
@@ -98,6 +124,7 @@
                         android:id="@+id/deityInfo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="Deity: Lord Mangesh (an incarnation of Shiva)"
                         android:textColor="#555555"
                         android:textSize="14sp" />
@@ -107,6 +134,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="16dp"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="Best Time to Visit: Early morning or evening"
                         android:textColor="#555555"
                         android:textSize="14sp" />
@@ -118,6 +146,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="8dp"
                         android:text="Highlights"
+                        android:fontFamily="@font/poppins_semibold"
                         android:textColor="#333333"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -128,6 +157,7 @@
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="4dp"
                         android:paddingBottom="16dp"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="• Intricately designed pillars and the seven-story lamp tower.\n• Annual festivals like Mahashivratri celebrated with grandeur."
                         android:textColor="#555555"
                         android:textSize="14sp" />
@@ -140,6 +170,7 @@
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
                         android:text="Learn More"
+                        android:fontFamily="@font/poppins_semibold"
                         android:textColor="#0066CC"
                         android:textSize="14sp"
                         android:textStyle="bold" />
