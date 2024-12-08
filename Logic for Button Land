@@ -1,0 +1,41 @@
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class LandscapeActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_landscape);
+
+        // Find buttons
+        Button beachesButton = findViewById(R.id.beaches_button);
+        Button waterfallButton = findViewById(R.id.waterfall_button);
+        Button hillsButton = findViewById(R.id.hills_button);
+        Button sanctuariesButton = findViewById(R.id.sanctuaries_button);
+
+        // Set click listeners
+        beachesButton.setOnClickListener(v -> {
+            // Stay on the same page
+        });
+
+        waterfallButton.setOnClickListener(v -> {
+            Intent intent = new Intent(LandscapeActivity.this, WaterfallActivity.class);
+            startActivity(intent);
+        });
+
+        hillsButton.setOnClickListener(v -> {
+            Intent intent = new Intent(LandscapeActivity.this, HillsActivity.class);
+            startActivity(intent);
+        });
+
+        sanctuariesButton.setOnClickListener(v -> {
+            Intent intent = new Intent(LandscapeActivity.this, SanctuariesActivity.class);
+            startActivity(intent);
+        });
+    }
+}
