@@ -8,3 +8,13 @@
 
 ----------------------------------------------------------------------------------------------------------------------------
 
+//rounded_category_card_land.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#80989898" /> <!-- Background color with 50% opacity -->
+    <corners android:radius="16dp" /> <!-- Rounded corners -->
+</shape>
+
+----------------------------------------------------------------------------------------------------
+
