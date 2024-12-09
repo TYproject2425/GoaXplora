@@ -3,48 +3,39 @@
 //HelpActivity
 
 package com.example.goaxplora;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class HelpActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help); // Replace with your XML file name
+        setContentView(R.layout.activity_help);
 
-        // Find the back arrow ImageView by its ID
-        ImageView backArrow = findViewById(R.id.back_arrow);
 
-        // Set OnClickListener to handle click events
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate back to HomeActivity
-                Intent intent = new Intent(HelpActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish(); // Optional: Close the current activity to prevent returning to it
-            }
-        });
     }
 }
-
 
 
 // XML layout
 
 //activity_help
 
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/login_gradient"
     tools:context=".HelpActivity"
     tools:ignore="Hardcore text">
 
@@ -73,8 +64,8 @@ public class HelpActivity extends AppCompatActivity {
                     android:id="@+id/back_arrow"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/back_arrow_black"
-                    android:contentDescription="Back" />
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:contentDescription="@string/back" />
 
                 <TextView
                     android:layout_width="174dp"
@@ -83,7 +74,7 @@ public class HelpActivity extends AppCompatActivity {
                     android:text="@string/Overview"
                     android:textColor="#11627D"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/poppins_semibold" />
             </LinearLayout>
 
             <!-- Description -->
@@ -91,7 +82,8 @@ public class HelpActivity extends AppCompatActivity {
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/description"
-                android:textSize="16sp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_semibold"
                 android:lineSpacingExtra="4dp"
                 android:textColor="#2B3B47"
                 android:layout_marginBottom="24dp"
@@ -102,16 +94,16 @@ public class HelpActivity extends AppCompatActivity {
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Help"
+                android:fontFamily="@font/poppins_semibold"
                 android:textColor="#11627D"
                 android:textSize="22sp"
-                android:textStyle="bold"
                 android:gravity="start" /> <!-- Aligned to start -->
 
             <!-- Help Section as CardView -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="4dp"
                 android:padding="16dp"
                 android:backgroundTint="#0087B5"
                 app:cardCornerRadius="16dp"
@@ -125,9 +117,9 @@ public class HelpActivity extends AppCompatActivity {
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" How To Explore Goa "
+                        android:text="@string/how_to_explore_goa"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold"
                         android:textSize="17sp"
                         android:layout_marginBottom="8dp"
                         android:paddingStart="16dp"
@@ -138,9 +130,11 @@ public class HelpActivity extends AppCompatActivity {
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="6dp"
-                        android:text=" 1. Browse Categories: Find beaches, restaurants, shopping, activities, and more.\n\n 2. Plan Easily: Get details, maps, and tips for every destination.\n\n 3. Save Favorites: Create a list of must-visit places.\n\n 4. Navigate: Use the map for directions and explore effortlessly."
+                        android:text="@string/first"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/raleway_regular"
                         android:gravity="center_vertical"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp" />
@@ -149,10 +143,10 @@ public class HelpActivity extends AppCompatActivity {
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" FAQs (Frequently Asked Questions) >"
+                        android:text="@string/faqs_frequently_asked_questions"
                         android:textColor="#FFFFFF"
                         android:textSize="17sp"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold"
                         android:layout_marginTop="16dp"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp" />
@@ -160,23 +154,26 @@ public class HelpActivity extends AppCompatActivity {
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=" Travel Safety Tips\n - Precautions when renting scooters.\n - Staying safe at beaches (e.g., rip current warnings).\n - Avoiding tourist scams."
+                        android:text="@string/third"
                         android:textSize="16sp"
                         android:lineSpacingExtra="6dp"
                         android:textColor="#FFFFFF"
+                        android:fontFamily="@font/raleway_medium"
                         android:layout_marginTop="8dp"
                         android:gravity="center_vertical"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp" />
 
                     <!-- Contact Section -->
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text=" Contact Us: support@goaexplora.com"
+                        android:text="@string/contact_us_support_goaexplora_com"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
+                        android:fontFamily="@font/raleway_medium"
                         android:gravity="center"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp" />
