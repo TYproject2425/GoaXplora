@@ -171,3 +171,129 @@ public class MainActivity extends AppCompatActivity {
         this.calendar = calendar;
     }
 }
+
+//updated notification
+
+package com.example.loginscreen;
+
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+
+import java.util.Calendar;
+
+public class calendarActivity extends AppCompatActivity {
+
+    private CalendarView calendarView;
+    private EditText eventEditText;
+
+    private static final String CHANNEL_ID = "event_notification_channel";
+    private static final int NOTIFICATION_PERMISSION_REQUEST_CODE = 101;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_calender);
+
+        // Initialize views
+        calendarView = findViewById(R.id.calendarView);
+        eventEditText = findViewById(R.id.eventEditText);
+        Button saveEventButton = findViewById(R.id.saveEventButton);
+
+        // Listener for date selection
+        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
+            // Format the selected date
+            String formattedDate = String.format("%02d/%02d/%d", dayOfMonth, (month + 1), year);
+            // Display the selected date in the EditText
+            eventEditText.setText(formattedDate);
+        });
+
+        // Check notification permissions for Android 13+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, NOTIFICATION_PERMISSION_REQUEST_CODE);
+            }
+        }
+
+        // Save event when the button is clicked
+        saveEventButton.setOnClickListener(v -> {
+            long selectedDate = calendarView.getDate();
+            String eventLabel = eventEditText.getText().toString().trim();
+
+            if (!eventLabel.isEmpty()) {
+                // Set the notification
+                scheduleEventNotification(selectedDate, eventLabel);
+                Toast.makeText(calendarActivity.this, "Event saved: " + eventLabel, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(calendarActivity.this, "Please enter an event label", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void scheduleEventNotification(long eventDateInMillis, String eventLabel) {
+        // Calculate delay time in milliseconds
+        long currentTime = System.currentTimeMillis();
+        long delay = eventDateInMillis - currentTime;
+
+        if (delay <= 0) {
+            Toast.makeText(this, "Event date has already passed!", Toast.LENGTH_SHORT).show();
+            return; // Event date has passed, no need to schedule
+        }
+
+        // Use Handler to trigger notification at the event time
+        new Handler(Looper.getMainLooper()).postDelayed(() -> showNotification(eventLabel), delay);
+    }
+
+    private void showNotification(String eventLabel) {
+        // Create notification channel for Android 8.0 and above
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    CHANNEL_ID,
+                    "Event Notifications",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+            channel.setDescription("Notifications for scheduled events");
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            if (notificationManager != null) {
+                notificationManager.createNotificationChannel(channel);
+            }
+        }
+
+        // Build and display the notification using NotificationCompat.Builder
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle("Event Reminder")
+                .setContentText("It's time for: " + eventLabel)
+                .setSmallIcon(R.drawable.logo2) // Replace with your app's notification icon
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (notificationManager != null) {
+            notificationManager.notify((int) System.currentTimeMillis(), builder.build());
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == NOTIFICATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Notification permission is required for reminders.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+}
