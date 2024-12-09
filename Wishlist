@@ -8,7 +8,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0F7FA"
+    android:background="@drawable/login_gradient"
     tools:ignore="HardcodedText"
     tools:context=".WishlistActivity">
 
@@ -31,7 +31,7 @@
         android:text="WISHLIST"
         android:textColor="#11627D"
         android:textSize="24sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,8 @@
             android:text="Browse Places"
             android:textColor="#000"
             android:layout_marginTop="30dp"
-            android:textStyle="bold"/>
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_semibold"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -109,13 +110,14 @@
                     android:text="Baga Beach, Goa"
                     android:textColor="#000000"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/poppins_regular" />
 
                 <TextView
                     android:id="@+id/placeCategory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Category: Landscape"
+                    android:fontFamily="@font/poppins_regular"
                     android:textColor="#757575"
                     android:textSize="14sp" />
 
@@ -132,6 +134,7 @@
                         android:layout_height="wrap_content"
                         android:text="View Details"
                         android:textColor="#0288D1"
+                        android:fontFamily="@font/poppins_medium"
                         android:textSize="14sp"
                         android:drawableStart="@drawable/baseline_manage_search_24"
                         android:drawablePadding="4dp" />
@@ -142,6 +145,7 @@
                         android:layout_height="wrap_content"
                         android:text="Plan a Visit"
                         android:textColor="#0288D1"
+                        android:fontFamily="@font/poppins_medium"
                         android:textSize="14sp"
                         android:layout_marginStart="16dp"
                         android:drawableStart="@drawable/baseline_calendar_month_24"
@@ -151,7 +155,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Browse Places Button -->
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -169,51 +172,29 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                  
+                      
 ________
 //java file
 
-package com.example.mywishlist;
+package com.example.goaxplora;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class WishlistActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wishlist_with_items);
-
-        ImageView backButton = findViewById(R.id.backButton);
-        Button browsePlacesButton = findViewById(R.id.browsePlacesButton);
-        TextView viewDetails = findViewById(R.id.viewDetails);
-        TextView planVisit = findViewById(R.id.planVisit);
-
-        // Back button
-        backButton.setOnClickListener(v -> finish());
-
-        // Browse places
-        browsePlacesButton.setOnClickListener(v -> {
-            Intent intent = new Intent(WishlistActivity.this, BrowsePlacesActivity.class);
-            startActivity(intent);
-        });
-
-        // View details
-        viewDetails.setOnClickListener(v -> {
-            Intent intent = new Intent(WishlistActivity.this, PlaceDetailsActivity.class);
-            startActivity(intent);
-        });
-
-        // Plan a visit
-        planVisit.setOnClickListener(v -> {
-            Intent intent = new Intent(WishlistActivity.this, PlanVisitActivity.class);
-            startActivity(intent);
-        });
+        setContentView(R.layout.activity_wishlist);
     }
 }
 __________________________________________________________________________________________________________
