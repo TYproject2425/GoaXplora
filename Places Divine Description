@@ -95,7 +95,7 @@ public class MangeshiTemple extends AppCompatActivity {
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:background="#F4DBC8"
+                    android:background="#F5E4D7"
                     android:padding="16dp">
                     <!-- Title Row -->
                     <LinearLayout
