@@ -1,0 +1,43 @@
+//button_background.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Rounded corners -->
+    <corners android:radius="8dp" />
+</shape>
+
+--------------------------------------------------------------------------
+
+//circle_background.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#E0E0E0" />
+    <corners android:radius="100dp" />
+</shape>
+
+---------------------------------------------------------------------------
+//custom_edittext.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <stroke
+        android:width="3dp"/>
+
+    <corners
+        android:radius="20dp"/>
+</shape>
+
+--------------------------------------------------------------------------------
+
+//edittext_background.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF" /> <!-- Background color -->
+    <stroke android:width="2dp" android:color="#1689B0" /> <!-- blue border -->
+    <corners android:radius="20dp" /> <!-- Rounded corners -->
+</shape>
