@@ -1,17 +1,37 @@
-//gradient_background    (used in login,signup ,home,profile,help,faq,wishlist,feedback pages)
+//splash_gradient.xml (Home Screen, Splash Screen)
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
-        android:startColor="#ADD8E6"
-        android:endColor="#FFFACD"
+        android:startColor="#AEE4F6"
+        android:endColor="#FFF4C2"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+_____________________________________________________________________________________________________
+//login_gradient.xml (sign up,login,help,profile,FAQ,feedback,calender,wishlist empty,wislist,feedback before ,feedback after)
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#AEE4F6"
+        android:endColor="#FFE1D6"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+__________________________________________________________________________________________________________
+//gradient_background    (used in style of splash)
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#AEE4F6"
+        android:endColor="#FFF4C2"
         android:angle="270"
         android:type="linear"/>
 </shape>
 
 
 --------------------------------------------------------------------------------------------
-
-
 //gradient_landscape
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
@@ -21,7 +41,6 @@
         android:angle="270"
         android:type="linear"/>
 </shape>
-
 
 --------------------------------------------------------------------------------------------
 
@@ -53,13 +72,25 @@
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
-        android:startColor="#FF5DA2"
-        android:endColor="#FFAA5B"
+        android:startColor="#FF7EB3"
+        android:endColor="#8E44AD"
         android:angle="270"
         android:type="linear"/>
 </shape>
 
 ---------------------------------------------------------------------------------------------------
+
+//gradient_places.xml
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#141E30"
+        android:endColor="#243B55"
+        android:angle="270"
+        android:type="linear"/>
+</shape>
+
+___________________________________________________________________________________________________________
 
 //gradient_hotel
 
