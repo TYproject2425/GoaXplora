@@ -4,49 +4,37 @@
 
 package com.example.goaxplora;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class FAQActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_faq); // Replace with your XML layout for the FAQ page
+        setContentView(R.layout.activity_faqactivity);
 
-        // Find the back arrow ImageView by its ID
-        ImageView backArrow = findViewById(R.id.back_arrow);
-
-        // Set OnClickListener for the back arrow
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate back to HomeActivity
-                Intent intent = new Intent(FAQActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish(); // Close FAQActivity to prevent returning to it
-            }
-        });
     }
 }
-
-
 
 
 // XML layout
 
 //activity_faq
 
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/login_gradient"
     tools:ignore="HardcodedText">
 
     <!-- Back Arrow and Title Header -->
@@ -63,7 +51,7 @@ public class FAQActivity extends AppCompatActivity {
             android:id="@+id/back_arrow"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/back_arrow_black"
+            android:src="@drawable/baseline_arrow_back_ios_24"
             android:contentDescription="@string/back"
             app:tint="#11627D" />
 
@@ -73,8 +61,8 @@ public class FAQActivity extends AppCompatActivity {
             android:layout_marginStart="1dp"
             android:text="FAQs (Frequently Asked Questions)"
             android:textColor="#11627D"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <!-- Scrollable FAQ Section -->
@@ -112,7 +100,8 @@ public class FAQActivity extends AppCompatActivity {
                         android:layout_height="wrap_content"
                         android:text="1. Do I need prior experience for scuba diving or parasailing?\nNot at all! Scuba diving and parasailing in Goa are beginner-friendly, and professional instructors guide you through the process.\n\n2. Are water sports safe in Goa?\nYes, most water sports operators follow safety guidelines. We recommend choosing licensed operators listed in the app for the best experience.\n\n3. Are there entry restrictions for casinos and nightclubs?\nYes, most casinos and nightclubs require you to be 18 or older. Some clubs may also have dress codes (smart casuals).\n\n4. Is Goa nightlife safe?\nGoa is generally safe for nightlife. However, it’s always good to stay alert, avoid isolated areas, and use trusted transport options to return to your accommodation.\n\n5. Is self-driving recommended in Goa?\nYes, renting a bike or car is a popular way to explore Goa. However, ensure you carry a valid driving license and follow local traffic rules.\n\n6. Can I book taxis or scooters through the app?\nNo, but we provide details of trusted rental services and taxi operators to help you."
                         android:textColor="#FFFFFF"
-                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="14sp"
                         android:lineSpacingExtra="6dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
