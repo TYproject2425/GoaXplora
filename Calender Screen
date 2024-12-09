@@ -1,0 +1,173 @@
+//XML layout
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- CalendarView for selecting a date -->
+    <android.widget.CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <!-- EditText to input event name -->
+    <EditText
+        android:id="@+id/eventEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="true"
+        android:hint="@string/enter_event_e_g_picnic1"
+        android:layout_below="@id/calendarView"
+        android:layout_marginTop="30dp"
+        android:inputType="text"
+        android:padding="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <!-- Button to save event label -->
+    <Button
+        android:id="@+id/saveEventButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_event"
+        android:layout_below="@id/eventEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Button to set reminder -->
+    <Button
+        android:id="@+id/setReminderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_reminder"
+        android:layout_below="@id/saveEventButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>
+
+
+
+
+  //java code
+
+  package com.example.goaxplora;
+
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
+import java.util.Calendar;
+
+public class MainActivity extends AppCompatActivity {
+
+    private CalendarView calendarView;
+    private EditText eventEditText;
+
+    private Calendar calendar = Calendar.getInstance();
+    private static final String CHANNEL_ID = "event_notification_channel";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Initialize views
+        calendarView = findViewById(R.id.calendarView);
+        eventEditText = findViewById(R.id.eventEditText);
+        Button saveEventButton = findViewById(R.id.saveEventButton);
+
+        // Listener for date selection
+        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
+            // Format the selected date
+            String formattedDate = String.format("%02d/%02d/%d", dayOfMonth, (month + 1), year);
+            // Display the selected date in the EditText
+            eventEditText.setText(formattedDate);
+        });
+
+        // Save event when the button is clicked
+        saveEventButton.setOnClickListener(v -> {
+            long selectedDate = calendarView.getDate();
+            String eventLabel = eventEditText.getText().toString().trim();
+
+            if (!eventLabel.isEmpty()) {
+                // Set the notification
+                scheduleEventNotification(selectedDate, eventLabel);
+                Toast.makeText(MainActivity.this, "Event saved: " + eventLabel, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, "Please enter an event label", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void scheduleEventNotification(long eventDateInMillis, String eventLabel) {
+        // Calculate delay time in milliseconds
+        long currentTime = System.currentTimeMillis();
+        long delay = eventDateInMillis - currentTime;
+
+        if (delay <= 0) {
+            Toast.makeText(this, "Event date has already passed!", Toast.LENGTH_SHORT).show();
+            return; // Event date has passed, no need to schedule
+        }
+
+        // Use Handler to trigger notification at the event time
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            showNotification(eventLabel);
+        }, delay); // Delay until the event time
+    }
+
+    private void showNotification(String eventLabel) {
+        // Create notification channel for Android 8.0 and above
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            CharSequence name = "Event Notifications";
+            String description = "Notifications for events";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+
+            // Register the channel with the system
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            if (notificationManager != null) {
+                notificationManager.createNotificationChannel(channel);
+            }
+        }
+
+        // Build and display the notification
+        Notification.Builder builder = null; // Auto cancel when clicked
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            builder = new Notification.Builder(this, CHANNEL_ID)
+                    .setContentTitle("Event Reminder")
+                    .setContentText("It's time: " + eventLabel)
+                    .setSmallIcon(R.drawable.logoimg)
+                    .setAutoCancel(true);
+        }
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (notificationManager != null) {
+            assert builder != null;
+            notificationManager.notify(0, builder.build());
+        }
+    }
+
+    public Calendar getCalendar() {
+        return calendar;
+    }
+
+    public void setCalendar(Calendar calendar) {
+        this.calendar = calendar;
+    }
+}
