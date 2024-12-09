@@ -384,11 +384,5 @@ public class ShoppingActivity extends AppCompatActivity {
 
 _____________________________________________________________________________________________________________________________________________
 
-//round_cat_card_shop
 
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#4FFFCCE5" /> <!-- Background color with 31% opacity -->
-    <corners android:radius="16dp" /> <!-- Rounded corners -->
-</shape>
 
