@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
 //activity_login
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -72,7 +73,8 @@ public class LoginActivity extends AppCompatActivity {
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/GoaXplora"
-            android:textSize="24sp"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textAlignment="center"/>
@@ -92,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="24dp"
+            android:padding="20dp"
             android:layout_marginTop="0dp">
 
 
@@ -101,9 +103,10 @@ public class LoginActivity extends AppCompatActivity {
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Welcome_Back"
+                android:fontFamily="@font/poppins_semibold"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
-                android:textSize="34sp"
+                android:textSize="33sp"
                 android:textStyle="bold"/>
 
             <EditText
@@ -116,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                 android:drawableStart="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
                 android:hint="@string/username"
+                android:fontFamily="@font/poppins_light"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black"
@@ -131,6 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                 android:drawableStart="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:hint="@string/password"
+                android:fontFamily="@font/poppins_light"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/black"
@@ -141,6 +146,7 @@ public class LoginActivity extends AppCompatActivity {
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="@string/Login"
+                android:fontFamily="@font/poppins_semibold"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/blue"
                 android:textColor="@color/white"
@@ -158,6 +164,7 @@ public class LoginActivity extends AppCompatActivity {
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="@string/Not_yet_registered_Signup_Now"
+        android:fontFamily="@font/poppins_light"
         android:textSize="14sp"
         android:textAlignment="center"
         android:textColor="@color/blue"
