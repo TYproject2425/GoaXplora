@@ -1,8 +1,25 @@
-//for category logo
+//for category logo,star rating,splash screen
 
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="roundedImageView" parent="Widget.MaterialComponents.ShapeableImageView">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+    <style name="Theme.GoaXplora.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/gradient_background</item>
     </style>
+
+
+    <style name="roundedImageView" parent="Widget.MaterialComponents.ShapeableImageView">
+            <item name="cornerFamily">rounded</item>
+            <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Define the SmallRatingBar style -->
+    <style name="SmallRatingBar" parent="Widget.AppCompat.RatingBar.Small">
+        <!-- Adjust the size of the stars -->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">16dp</item> <!-- Customize height -->
+        <item name="android:maxHeight">16dp</item> <!-- Customize height -->
+    </style>
+
 </resources>
+
