@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     tools:ignore="Hardcodedtext"
-    tools:context=".MangeshiTemple">
+    tools:context=".LeelaHotel">
 
     <!-- Image with Toolbar Overlay -->
     <FrameLayout
