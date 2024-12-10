@@ -12,7 +12,7 @@
     android:background="@drawable/gradient_landscape"
     tools:context=".LandscapeActivity">
 
-    <!-- Header -->
+    <!-- Header Section -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="112dp"
@@ -24,7 +24,8 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_alignParentStart="true"
-            android:src="@drawable/baseline_arrow_back_ios_24" />
+            android:contentDescription="@string/back"
+            android:src="@drawable/baseline_arrow_back_ios_b24" />
 
         <TextView
             android:id="@+id/title"
@@ -50,7 +51,7 @@
             android:textSize="16sp" />
     </RelativeLayout>
 
-    <!-- Categories -->
+    <!-- Categories Section -->
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,550 +64,103 @@
             android:orientation="horizontal">
 
             <Button
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/beaches_button"
+                android:id="@+id/btn_beaches"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/beaches"
+                android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/black"
-                app:cornerRadius="16dp"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
                 android:layout_margin="4dp"
                 android:backgroundTint="#FFFFFF" />
 
             <Button
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/waterfall_button"
+                android:id="@+id/btn_waterfall"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/waterfall"
+                android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/black"
-                app:cornerRadius="16dp"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
                 android:layout_margin="4dp"
                 android:backgroundTint="#FFFFFF" />
 
             <Button
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/hills_button"
+                android:id="@+id/btn_hills"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hills"
+                android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
-                app:cornerRadius="16dp"
                 android:layout_margin="4dp"
                 android:backgroundTint="#FFFFFF" />
 
             <Button
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/sanctuaries_button"
+                android:id="@+id/btn_sanctuaries"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sanctuaries"
+                android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
-                app:cornerRadius="16dp"
                 android:layout_margin="4dp"
                 android:backgroundTint="#FFFFFF" />
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- List of Cards -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
+    <!-- Cards Container -->
+    <LinearLayout
+        android:id="@+id/cards_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp" />
 
-            <!-- Baga Card -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card_land"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/baga_beach"
-                    android:background="@drawable/rounded_category_card_land"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/baga_beach"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card_land"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/calangute2"
-                    android:background="@drawable/rounded_category_card_land"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/calangute_beach"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon1"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card_land"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/anjuna"
-                    android:background="@drawable/rounded_category_card_land"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image2"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/anjuna_beach"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon2"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card_land"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/palolem_beach"
-                    android:background="@drawable/rounded_category_card_land"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image3"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/palolem"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_south_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon3"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card_land"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/candolim_beach_goa"
-                    android:background="@drawable/rounded_category_card_land"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image4"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/candolim"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon4"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card_land"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/vagator_beach"
-                    android:background="@drawable/rounded_category_card_land"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image5"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/vagator"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon5"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card_land"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image6"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/colva_beach_goa"
-                    android:background="@drawable/rounded_category_card_land"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image6"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/colva"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_south_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon6"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card_land"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/mor"
-                    android:background="@drawable/rounded_category_card_land"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image7"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/morjim"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon7"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-        </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/white"
-        app:menu="@menu/bottom_nav_menu"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
-        app:labelVisibilityMode="unlabeled" />
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </LinearLayout>
 
 
 
-
+---------------------------------------------------------
 //java file
 //LandscapeActivity
 
 package com.example.goaxplora;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.LayoutInflater;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -616,653 +170,162 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class LandscapeActivity extends AppCompatActivity {
 
-    Button beachesButton;
-    Button waterfallButton;
+    private LinearLayout cardsContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landscape);
+// Initialize views
+        cardsContainer = findViewById(R.id.cards_container);
+        Button btnHills = findViewById(R.id.btn_hills);
+        Button btnBeaches = findViewById(R.id.btn_beaches);
+        Button btnWaterfalls = findViewById(R.id.btn_waterfall);
+        Button btnSanctuaries = findViewById(R.id.btn_sanctuaries);
 
-        beachesButton = findViewById(R.id.beaches_button);
-        waterfallButton = findViewById(R.id.waterfall_button);
+        // Button click listeners
+        btnHills.setOnClickListener(v -> loadLandscapeCards("hills"));
+        btnBeaches.setOnClickListener(v -> loadLandscapeCards("beaches"));
+        btnWaterfalls.setOnClickListener(v -> loadLandscapeCards("waterfalls"));
+        btnSanctuaries.setOnClickListener(v -> loadLandscapeCards("sanctuaries"));
 
-        // Set click listeners
-        beachesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        // Load Beaches cards by default when activity is created
+        loadLandscapeCards("beaches");
+    }
 
-            }
-            // Stay on the same page
-        });
+    private void loadLandscapeCards(String landscapeType) {
+        cardsContainer.removeAllViews(); // Clear existing cards
 
-        waterfallButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LandscapeActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        switch (landscapeType) {
+            case "beaches":
+                addCard("Baga Beach", "Location: North Goa", R.drawable.baga_beach);
+                addCard("Calangute Beach","Location: North Goa",R.drawable.calangute);
+                addCard("Anjuna Beach", "Location: North Goa", R.drawable.anjuna);
+                addCard("Palolem Beach", "Location: South Goa", R.drawable.palolem_beach);
+                addCard("Candolim Beach", "Location: North Goa", R.drawable.candolim_beach_goa);
+                addCard("Vagator Beach", "Location: North Goa", R.drawable.vagator_beach);
+                addCard("Colva Beach", "Location: South Goa", R.drawable.colva_beach_goa);
+                addCard("Morjim Beach", "Location: North Goa", R.drawable.mor);
+                break;
 
+            case "waterfalls":
+                addCard("Dudhsagar Waterfalls", "Location: Near Bhagwan Mahavir Sanctuary", R.drawable.dudhsagar_waterfall);
+                addCard("Arvalem Waterfalls", "Location: Near Sanquelim", R.drawable.harvalem);
+                addCard("Tambdi Surla Waterfalls", "Location: Bhagwan Mahavir Sanctuary", R.drawable.tambdi_surla);
+                addCard("Kesarval Waterfalls", "Location: Verna, South Goa", R.drawable.kesar);
+                break;
 
+            case "hills":
+                addCard("Dudhsagar Trek Hills", "Location: Western Ghats", R.drawable.dudhsagar);
+                addCard("Chorla Ghat", "Location: Border of Goa, Karnataka, and Maharashtra", R.drawable.chorla);
+                addCard("Vagheri Peaks Trek", "Location: Situated  near Chorla Ghat, in the Sattari region of North Goa", R.drawable.vagheri_peak);
+                addCard("Cabo de Rama Trek", "Location: Located in South Goa, near the Cabo de Rama Fort", R.drawable.cabo_de_rama_trek);
+                addCard("Arambol Trek", "Location: Starts from Arambol Beach in North Goa.", R.drawable.arambol_trek);
+                addCard("Hivrem-Valpoi Hike", "Location: Begins in the village of Hivrem, near Valpoi in North Goa", R.drawable.hivrem_valpoi);
+                addCard("Sonsogor Trek", "Location: Located in the Sattari taluka of North Goa, near the border with Karnataka", R.drawable.sonsogor_trek);
+                break;
 
+            case "sanctuaries":
+                addCard("Bhagwan Mahavir Wildlife Sanctuary", "Location: Near Molem", R.drawable.bhagwan_mahavir_wildlife);
+                addCard("Bondla Wildlife Sanctuary", "Location: North Goa", R.drawable.bodla);
+                addCard("Cotigoa Wildlife Sanctuary", "Location: South Goa", R.drawable.cotigoa);
+                addCard("Netravali Wildlife Sanctuary", "Location: South Goa", R.drawable.netravali_sanctuary);
+                addCard("Salim Ali Bird Sanctuary", "Location: Chorao Island", R.drawable.salim_ali);
+                break;
 
+            default:
+                addCard("Baga Beach", "Location: North Goa", R.drawable.baga_beach);
+                addCard("Calangute Beach","Location: North Goa",R.drawable.calangute);
+                addCard("Anjuna Beach", "Location: North Goa", R.drawable.anjuna);
+                addCard("Palolem Beach", "Location: South Goa", R.drawable.palolem_beach);
+                addCard("Candolim Beach", "Location: North Goa", R.drawable.candolim_beach_goa);
+                addCard("Vagator Beach", "Location: North Goa", R.drawable.vagator_beach);
+                addCard("Colva Beach", "Location: South Goa", R.drawable.colva_beach_goa);
+                addCard("Morjim Beach", "Location: North Goa", R.drawable.mor);
+                break;
+        }
+    }
+
+    private void addCard(String title, String subtitle, int imageResId) {
+        // Dynamically create a new card and add it to the container
+        RelativeLayout card = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.landscape_layout, cardsContainer, false);
+
+        // Initialize views inside the card
+        TextView cardTitle = card.findViewById(R.id.card_title);
+        TextView cardSubtitle = card.findViewById(R.id.card_subtitle);
+        ImageView cardImage = card.findViewById(R.id.card_image);
+
+        // Set the content for the card
+        cardTitle.setText(title);
+        cardSubtitle.setText(subtitle);
+        cardImage.setImageResource(imageResId);
+
+        // Add the card to the container
+        cardsContainer.addView(card);
     }
 }
 
 
 
-
 ------------------------------------------------------------------------------------------------------------------------------
-//waterfall  half done
+//landscape_layout
 
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@drawable/gradient_landscape"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/rounded_category_card_land"
+    android:padding="8dp"
+    android:elevation="4dp">
 
-    <!-- Header -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="112dp"
-        android:background="#FFC077"
-        android:padding="16dp">
+    <!-- Image Section -->
+    <ImageView
+        android:id="@+id/card_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/image" />
 
-        <ImageView
-            android:id="@+id/back_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/baseline_arrow_back_ios_24" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/explore_landscapes"
-            android:fontFamily="@font/merienda_variablefont_wght"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@string/nature_s_wonders_waiting_to_be_explored"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-    </RelativeLayout>
-
-    <!-- Categories -->
-    <HorizontalScrollView
-        android:layout_width="match_parent"
+    <!-- Text Section -->
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:scrollbars="none">
+        android:layout_toEndOf="@id/card_image"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        tools:ignore="RelativeOverlap">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/card_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="@string/baga_beach_title"
+            android:fontFamily="@font/raleway_semibold"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
 
-            <Button
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/beaches_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/beaches"
-                android:textColor="@color/black"
-                app:cornerRadius="16dp"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_margin="4dp"
-                android:backgroundTint="#FFFFFF" />
-
-            <Button
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/waterfall_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/waterfall"
-                android:textColor="@color/black"
-                app:cornerRadius="16dp"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_margin="4dp"
-                android:backgroundTint="#FFFFFF" />
-
-            <Button
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/hills_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hills"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
-                app:cornerRadius="16dp"
-                android:layout_margin="4dp"
-                android:backgroundTint="#FFFFFF" />
-
-            <Button
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/sanctuaries_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sanctuaries"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_regular"
-                app:cornerRadius="16dp"
-                android:layout_margin="4dp"
-                android:backgroundTint="#FFFFFF" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!-- List of Cards -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/card_subtitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:fontFamily="@font/raleway_medium"
+            android:text="@string/location_north_goa"
+            android:textSize="13.5sp"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
-            <!-- Baga Card -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card"
-                android:alpha="0.70"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/dudhsagar_waterfall"
-                    android:background="@drawable/rounded_category_card"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/baga_beach"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card"
-                android:alpha="0.70"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/harvalem"
-                    android:background="@drawable/rounded_category_card"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/calangute_beach"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon1"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card"
-                android:alpha="0.70"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/tambdi_surla"
-                    android:background="@drawable/rounded_category_card"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image2"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/anjuna_beach"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon2"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card"
-                android:alpha="0.70"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/kesar"
-                    android:background="@drawable/rounded_category_card"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image3"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/palolem"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_south_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon3"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card"
-                android:alpha="0.70"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/candolim_beach_goa"
-                    android:background="@drawable/rounded_category_card"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image4"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/candolim"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon4"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card"
-                android:alpha="0.70"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/vagator_beach"
-                    android:background="@drawable/rounded_category_card"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image5"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/vagator"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon5"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card"
-                android:alpha="0.70"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image6"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/colva_beach_goa"
-                    android:background="@drawable/rounded_category_card"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image6"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/colva"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_south_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon6"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/rounded_category_card"
-                android:alpha="0.70"
-                android:padding="8dp"
-                android:radius="8dp">
-
-                <ImageView
-                    android:id="@+id/card_image7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/mor"
-                    android:background="@drawable/rounded_category_card"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="@string/beach_image" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:layout_toEndOf="@id/card_image7"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/card_title7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/morjim"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_semibold"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/card_subtitle7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/location_north_goa"
-                        android:textColor="#FFFFFF"
-                        android:fontFamily="@font/raleway_medium"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/heart_icon7"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/baseline_favorite_border_24"
-                    android:contentDescription="@string/favorite_icon" />
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
-
-    <!-- Bottom Navigation -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/white"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
-        app:labelVisibilityMode="unlabeled" />
-</LinearLayout>
-
-
-
-
-
-
-----------------------------------------------------------------------------------------------------------------------------]
-
-
+    <!-- Favorite Icon -->
+    <ImageView
+        android:id="@+id/card_favorite"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:src="@drawable/baseline_favorite_border_24"
+        android:contentDescription="@string/favorite_icon" />
+</RelativeLayout>
 
