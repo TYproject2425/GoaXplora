@@ -1,0 +1,286 @@
+// XML Layout
+
+//activity_landscape.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".LandscapeActivity">
+
+    <!-- Header Section -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:background="#FFC077"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/back"
+            android:src="@drawable/baseline_keyboard_arrow_left_24" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/explore_landscapes"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="@string/nature_s_wonders_waiting_to_be_explored"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <!-- Categories Section -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_beaches"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/beaches"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp"
+                android:backgroundTint="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_waterfall"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/waterfall"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp"
+                android:backgroundTint="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_hills"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hills"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp"
+                android:backgroundTint="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_sanctuaries"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sanctuaries"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp"
+                android:backgroundTint="#FFFFFF" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Cards Container -->
+    <LinearLayout
+        android:id="@+id/cards_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp" />
+</LinearLayout>
+
+
+
+
+
+
+//  layout resource file
+
+//card_layout.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@android:color/white"
+    android:padding="8dp"
+    android:elevation="4dp">
+
+    <!-- Image Section -->
+    <ImageView
+        android:id="@+id/card_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/image" />
+
+    <!-- Text Section -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/card_image"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        tools:ignore="RelativeOverlap">
+
+        <TextView
+            android:id="@+id/card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/card_title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/card_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/card_subtitle"
+            android:textSize="14sp"
+            android:textColor="#777777" />
+    </LinearLayout>
+
+    <!-- Favorite Icon -->
+    <ImageView
+        android:id="@+id/card_favorite"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/baseline_favorite_border_24"
+        android:contentDescription="@string/favorite" />
+</RelativeLayout>
+
+
+
+
+
+
+
+
+// Java File
+
+//LandscapeActivity.java
+package com.example.loginscreen;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
+
+public class LandscapeActivity extends AppCompatActivity {
+
+    private LinearLayout cardsContainer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_landscape);
+
+        // Initialize views
+        cardsContainer = findViewById(R.id.cards_container);
+        Button btnHills = findViewById(R.id.btn_hills);
+        Button btnBeaches = findViewById(R.id.btn_beaches);
+        Button btnWaterfalls = findViewById(R.id.btn_waterfall);
+        Button btnSanctuaries = findViewById(R.id.btn_sanctuaries);
+
+        // Button click listeners
+        btnHills.setOnClickListener(v -> loadLandscapeCards("hills"));
+        btnBeaches.setOnClickListener(v -> loadLandscapeCards("beaches"));
+        btnWaterfalls.setOnClickListener(v -> loadLandscapeCards("waterfalls"));
+        btnSanctuaries.setOnClickListener(v -> loadLandscapeCards("sanctuaries"));
+
+        // Load Beaches cards by default when activity is created
+        loadLandscapeCards("beaches");
+    }
+
+    private void loadLandscapeCards(String landscapeType) {
+        cardsContainer.removeAllViews(); // Clear existing cards
+
+        switch (landscapeType) {
+            case "beaches":
+                // Add Beaches-specific cards dynamically
+                addCard("Baga Beach", "Location: Goa", R.drawable.logo2);
+                addCard("Anjuna Beach", "Location: Goa", R.drawable.logo2);
+                break;
+
+            case "waterfalls":
+                // Add Waterfalls-specific cards dynamically
+                addCard("Niagara Falls", "Location: USA/Canada", R.drawable.loginbkg);
+                break;
+
+            case "hills":
+                // Add Hills-specific cards dynamically
+                addCard("Hilltop Peak", "Location: Himalayas", R.drawable.logo2);
+                break;
+
+            case "sanctuaries":
+                // Add Sanctuaries-specific cards dynamically
+                addCard("Jim Corbett", "Location: Uttarakhand", R.drawable.loginbkg);
+                break;
+
+            default:
+                // Default behavior (e.g., show a default message or card)
+                addCard("Default Landscape", "No description", R.drawable.loginbkg);
+                break;
+        }
+    }
+
+    private void addCard(String title, String subtitle, int imageResId) {
+        // Dynamically create a new card and add it to the container
+        RelativeLayout card = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.card_layout, cardsContainer, false);
+
+        // Initialize views inside the card
+        TextView cardTitle = card.findViewById(R.id.card_title);
+        TextView cardSubtitle = card.findViewById(R.id.card_subtitle);
+        ImageView cardImage = card.findViewById(R.id.card_image);
+
+        // Set the content for the card
+        cardTitle.setText(title);
+        cardSubtitle.setText(subtitle);
+        cardImage.setImageResource(imageResId);
+
+        // Add the card to the container
+        cardsContainer.addView(card);
+    }
+}
