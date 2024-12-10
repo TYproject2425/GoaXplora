@@ -99,9 +99,9 @@
     <string name="highlights">Highlights</string>
     <string name="key_info_dudh_water">Location: Western Ghats\nDifficulty Level: Moderate\nStarting Point: Castle Rock or Kulem Railway Station\n• Distance: ~12 km (one-way)\n• Best Time: Monsoon and post-monsoon</string>
     <string name="key_information">Key Information</string>
-    <string name="Highlight_dudh_water">• Witness India’s tallest waterfalls\n• Trek through the Bhagwan Mahavir Wildlife Sanctuary\n• Ideal for nature lovers and photography enthusiasts</string>
+    <string name="highlight_dudh_water">• Witness India’s tallest waterfalls\n• Trek through the Bhagwan Mahavir Wildlife Sanctuary\n• Ideal for nature lovers and photography enthusiasts</string>
     <string name="dudhsagar_falls_trek">Dudhsagar Falls Trek</string>
-    <string name="the_dudhsagar_trek_takes_you_through_lush_forests_and_rugged_trails_to_the_stunning_dudhsagar_waterfalls_the_journey_offers_adventure_scenic_beauty_and_a_glimpse_of_goa_s_natural_splendor">The Dudhsagar Trek takes you through lush forests and rugged trails to the stunning Dudhsagar Waterfalls. The journey offers adventure, scenic beauty, and a glimpse of Goa’s natural splendor.</string>
+    <string name="overview_dudhsagar_trek">The Dudhsagar Trek takes you through lush forests and rugged trails to the stunning Dudhsagar Waterfalls. The journey offers adventure, scenic beauty, and a glimpse of Goa’s natural splendor.</string>
     <string name="shri_mangeshi_temple">Shri Mangeshi Temple</string>
     <string name="overview_mangeshi">Shri Mangeshi Temple, located in Ponda, is a revered Hindu temple dedicated to Lord Shiva. Famous for its stunning white architecture,and serene water tank, it blends spirituality with Goan heritage.</string>
     <string name="key_info_mangeshi">Location: Ponda, North Goa\nDeity: Lord Mangesh (an incarnation of Shiva)\nBest Time to Visit: Early morning or evening</string>
@@ -133,5 +133,17 @@
     <string name="act_tagline">\"Thrilling days, buzzing nights.\"</string>
     <string name="transport_head">Discover Goa at Your Pace</string>
     <string name="transport_tagline">\"Connecting you to your destination.\"</string>
-
+    <string name="key_carnival">When: February\nLocation: Panaji, Margao, Vasco, Mapusa\nHighlights:\n• King Momo’s Parade\n• Street performances and live music\n• Vibrant floats and costumes</string>
+    <string name="tips_carnival">• Arrive early for the best view of the parades.\n• Carry cash for local purchases and street food.\n• Stay hydrated and wear comfortable footwear.</string>
+    <string name="overview_anjuna_flea">Anjuna Flea Market is a lively hub for bohemian clothing, handcrafted jewelry, antiques, and souvenirs. Open every Wednesday, it offers a perfect blend of shopping, food, and live music. Nestled along the stunning coastline of North Goa, this iconic market attracts both locals and tourists seeking unique treasures and cultural experiences.</string>
+    <string name="anjuna_flea_market_head">Anjuna Flea Market</string>
+    <string name="key_anjuna_flea">Location: Anjuna Beach, North Goa\nTimings: Every Wednesday, 9:00 AM to 6:00 PM\nBest For: Handicrafts, jewelry, clothes, souvenirs</string>
+    <string name="highlight_flea_anjuna">• Enjoy live music performances.\n• Interact with local and international vendors.\n• Perfect for buying unique gifts.</string>
+    <string name="goa_carnival">Goa Carnival</string>
+    <string name="overview_carnival">The Goa Carnival is a four-day extravaganza of music, dance, and vibrant parades that showcases the rich Portuguese heritage of Goa. Experience with colorful floats, street performances, and delicious Goan cuisine!</string>
+    <string name="tips">Tips</string>
+    <string name="the_leela_goa_head">The Leela Goa</string>
+    <string name="overview_leela">The Leela Goa is a luxurious beachfront resort nestled amidst lush greenery and tranquil lagoons, offering an exquisite blend of elegance and serenity. Located in Cavelossim, this five-star retreat is renowned for its spacious suites, world-class amenities, and impeccable service.</string>
+    <string name="key_leela">Location: Cavelossim Beach, South Goa \nBest For: Couples, families, and luxury travelers \nAmenities: Private villas, golf course, multiple dining options</string>
+    <string name="highlight_leela">• Private beach access \n• Luxurious Ayurvedic spa treatments \n• Serene riverside location</string>
 </resources>
